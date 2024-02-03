@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS staking_reward (
   account_id TEXT NOT NULL,
   validator_stash_address TEXT DEFAULT NULL,
   era INT DEFAULT NULL,
-  amount BIGINT NOT NULL,
-  timestamp BIGINT NOT NULL,
+  amount TEXT NOT NULL,
+  timestamp TEXT NOT NULL,
   PRIMARY KEY ( block_number, event_index ) 
 );
 
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS staking_slash (
   account_id TEXT NOT NULL,
   validator_stash_address TEXT DEFAULT NULL,
   era INT DEFAULT NULL,
-  amount BIGINT NOT NULL,
+  amount TEXT NOT NULL,
   timestamp BIGINT NOT NULL,
   PRIMARY KEY ( block_number, event_index ) 
 );
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS transfer (
   source TEXT NOT NULL,
   destination TEXT NOT NULL,
   amount NUMERIC(40,0) NOT NULL,
-  fee_amount BIGINT,
+  fee_amount TEXT NOT NULL,
   success BOOLEAN NOT NULL,
   error_message TEXT DEFAULT NULL,
   timestamp BIGINT NOT NULL,
